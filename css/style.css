@@ -864,22 +864,26 @@ textarea::placeholder {
 }
 
 @media (max-width: 576px) {
+    .navbar {
+        padding: 12px 20px;
+        width: 96%;
+        box-sizing: border-box;
+    }
     .navbar .logo {
-        width: 40px;
+        width: 45px;
     }
     .navbar button {
-        padding: 7px 12px;
-        font-size: 0.85rem;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        flex-grow: 1;
+        max-width: 150px;
+        margin: 0 8px;
     }
     .navbar .menu-icon {
-        font-size: 1.3rem;
-    }
-    .navbar {
-        padding: 12px 10px;
-        width: 98%;
+        font-size: 1.5rem;
     }
     .navbar nav {
-        width: 98%;
+        width: 96%;
     }
 
     .hero-content h1 {
@@ -1074,8 +1078,14 @@ textarea::placeholder {
     }
 
     .form-content input,
-    .form-content textarea,
-    .form-content button[type="submit"] {
+    .form-content textarea {
         width: 90%;
     }
+}
+
+.form-content button[type="submit"] {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
 }

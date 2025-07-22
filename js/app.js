@@ -168,3 +168,11 @@ cards.forEach(card => {
             const nav = document.querySelector(".navbar nav");
             nav.classList.toggle("active");
         }
+
+        // ==== CV Button ====
+        let change;
+            document.getElementById("cv").onclick = () => {
+            change = document.getElementById("cv").textContent = 'Downloaded';
+            change = document.getElementById("cv").style.backgroundColor = '#25d366';
+            
+        }

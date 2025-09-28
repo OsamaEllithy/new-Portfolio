@@ -175,7 +175,7 @@ cards.forEach(card => {
             change = document.getElementById("cv").textContent = 'Downloaded';
             change = document.getElementById("cv").style.backgroundColor = '#25d366';
             setTimeout(() => {
-                change = document.getElementById("cv").textContent = 'Download';
+                change = document.getElementById("cv").textContent = 'Download CV';
                 change = document.getElementById("cv").style.backgroundColor = '#0073ff';
             }, 5000)
         }

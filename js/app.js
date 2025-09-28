@@ -171,8 +171,11 @@ cards.forEach(card => {
 
         // ==== CV Button ====
         let change;
-            document.getElementById("cv").onclick = () => {
+        document.getElementById("cv").onclick = () => {
             change = document.getElementById("cv").textContent = 'Downloaded';
             change = document.getElementById("cv").style.backgroundColor = '#25d366';
-            
+            setTimeout(() => {
+                change = document.getElementById("cv").textContent = 'Download';
+                change = document.getElementById("cv").style.backgroundColor = '#0073ff';
+            }, 5000)
         }

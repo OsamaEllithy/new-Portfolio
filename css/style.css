@@ -299,6 +299,7 @@ body {
     height: 300px;
     perspective: 1000px;
     flex: 0 1 300px;
+    cursor: pointer;
 }
 
 .card-inner {
@@ -669,6 +670,32 @@ textarea::placeholder {
 #close-form-btn:hover {
     background: rgba(0, 0, 0, 0.6);
     }
+
+    /* ==== Toast Notification Styles ==== */
+.toast-notification {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #0073ff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: hellight;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
 
 
 /* ==== Banner Animation ==== */
@@ -1071,7 +1098,6 @@ textarea::placeholder {
     }
 }
 
-/* Form Popup responsive adjustments */
 @media (max-width: 576px) {
     .form-content {
         padding: 30px 20px;

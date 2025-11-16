@@ -179,3 +179,16 @@ cards.forEach(card => {
                 change = document.getElementById("cv").style.backgroundColor = '#0073ff';
             }, 5000)
         }
+
+    // ==== Welcome Toast Notification ====
+    const welcomeToast = document.getElementById('welcome-toast');
+
+    if (welcomeToast) {
+        setTimeout(() => {
+            welcomeToast.classList.add('show');
+        }, 500);
+
+        setTimeout(() => {
+            welcomeToast.classList.remove('show');
+        }, 9000);
+    }

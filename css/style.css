@@ -671,33 +671,6 @@ textarea::placeholder {
     background: rgba(0, 0, 0, 0.6);
     }
 
-    /* ==== Toast Notification Styles ==== */
-.toast-notification {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100px);
-    background-color: #0073ff;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: hellight;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 1000;
-    white-space: nowrap;
-}
-
-.toast-notification.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-
 /* ==== Banner Animation ==== */
 
 .hero-content,
@@ -1115,4 +1088,46 @@ textarea::placeholder {
     justify-content: center;
     display: flex;
     width: 100%;
+}
+
+/* ==== Toast Notification Styles (Optimized for all screens) ==== */
+.toast-notification {
+    position: fixed;
+    top: 25px; /* زيادة المسافة من الأعلى لتجنب تداخل شريط التنقل */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px); /* يبدأ خارج الشاشة */
+    background-color: #25d366; 
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: hellight;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* ظل أقوى لبروزه */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10001; 
+    text-align: center; 
+    /* تحديد عرض أقصى على الشاشات الكبيرة ليبدو كـ 'Toast' حقيقي */
+    max-width: 500px; 
+}
+
+.toast-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* يظهر في مكانه */
+}
+
+/* الاستجابة للهواتف المحمولة (Responsive for Mobile) */
+@media (max-width: 600px) {
+    .toast-notification {
+        /* تحديد عرض الرسالة ليحتوي على هامش 20 بكسل من كل جانب */
+        width: calc(100% - 40px); 
+        max-width: none; /* إزالة الحد الأقصى للعرض ليتوافق مع الـ 90% */
+        padding: 10px 15px; 
+        font-size: 0.9rem;
+        top: 15px; /* تقريبها قليلاً في الهواتف */
+        /* لضمان أن النص يلتف بشكل سليم */
+        box-sizing: border-box; 
+    }
 }

@@ -1090,44 +1090,39 @@ textarea::placeholder {
     width: 100%;
 }
 
-/* ==== Toast Notification Styles (Optimized for all screens) ==== */
 .toast-notification {
     position: fixed;
-    top: 25px; /* زيادة المسافة من الأعلى لتجنب تداخل شريط التنقل */
+    top: 25px;
     left: 50%;
-    transform: translateX(-50%) translateY(-100px); /* يبدأ خارج الشاشة */
-    background-color: #25d366; 
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #0072ff;
     color: white;
     padding: 12px 25px;
-    border-radius: 8px;
+    border-radius: 40px;
     font-size: 1rem;
     font-family: hellight;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* ظل أقوى لبروزه */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 10001; 
-    text-align: center; 
-    /* تحديد عرض أقصى على الشاشات الكبيرة ليبدو كـ 'Toast' حقيقي */
-    max-width: 500px; 
+    z-index: 10001;
+    text-align: center;
+    max-width: 500px;
 }
 
 .toast-notification.show {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0); /* يظهر في مكانه */
+    transform: translateX(-50%) translateY(0);
 }
 
-/* الاستجابة للهواتف المحمولة (Responsive for Mobile) */
 @media (max-width: 600px) {
     .toast-notification {
-        /* تحديد عرض الرسالة ليحتوي على هامش 20 بكسل من كل جانب */
-        width: calc(100% - 40px); 
-        max-width: none; /* إزالة الحد الأقصى للعرض ليتوافق مع الـ 90% */
-        padding: 10px 15px; 
+        width: calc(100% - 40px);
+        max-width: none;
+        padding: 10px 15px;
         font-size: 0.9rem;
-        top: 15px; /* تقريبها قليلاً في الهواتف */
-        /* لضمان أن النص يلتف بشكل سليم */
-        box-sizing: border-box; 
+        top: 15px;
+        box-sizing: border-box;
     }
 }

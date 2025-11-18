@@ -190,5 +190,5 @@ cards.forEach(card => {
 
         setTimeout(() => {
             welcomeToast.classList.remove('show');
-        }, 9000);
+        }, 7000);
     }
